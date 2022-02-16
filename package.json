@@ -1,0 +1,38 @@
+{
+  "name": "Smart Contract 개발 기초",
+  "description": "...",
+  "keywords": [
+    "Smart Contract",
+    "Ethereum",
+    "Solidity"
+  ],
+  "version": "0.0.1",
+  "author": {
+    "name": "Sangmoon Oh",
+    "email": "halfface@chollian.net",
+    "url": ".."
+  },
+  "contributors": [],
+  "bundleDependencies": false,
+  "deprecated": false,
+  "files": [
+    "/contracts/**/*.sol",
+    "/build/truffle/*.json",
+    "!/mocks",
+    "!/examples"
+  ],
+  "dependencies": {
+    "@slidev/cli": "~0.28.5",
+    "@slidev/theme-default": "~0.21.1"
+  },
+  "engines": {
+    "node": ">=10.0"
+  },
+  "scripts": {
+    "//": [
+      "https://docs.npmjs.com/files/package.json",
+      "https://github.com/OpenZeppelin/zeppelin-solidity#getting-started"
+    ],
+    "preinstall": ""
+  }
+}
