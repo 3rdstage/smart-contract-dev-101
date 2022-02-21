@@ -1,0 +1,13 @@
+.z-font-sm .slidev-code {
+  font-size: 0.75rem !important;
+  line-height: 1.3 !important;
+}
+
+.z-font-xs .slidev-code  {
+  font-size: 0.65rem !important;
+  line-height: 1.3 !important;
+}
+
+.z-font-sm table{
+  font-size: 1.0rem !important;
+}

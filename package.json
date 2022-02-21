@@ -1,5 +1,5 @@
 {
-  "name": "Smart Contract 개발 기초",
+  "name": "smart-contract-dev-101",
   "description": "...",
   "keywords": [
     "Smart Contract",
@@ -23,10 +23,11 @@
   ],
   "dependencies": {
     "@slidev/cli": "~0.28.5",
-    "@slidev/theme-default": "~0.21.1"
+    "@slidev/theme-default": "~0.21.1",
+    "@slidev/theme-seriph": "^0.21.1"
   },
   "engines": {
-    "node": ">=10.0"
+    "node": ">=14.0"
   },
   "scripts": {
     "//": [
@@ -34,5 +35,9 @@
       "https://github.com/OpenZeppelin/zeppelin-solidity#getting-started"
     ],
     "preinstall": ""
+  },
+  "devDependencies": {
+    "@iconify-json/logos": "^1.1.0",
+    "playwright-chromium": "^1.19.1"
   }
 }
