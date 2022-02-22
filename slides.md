@@ -16,9 +16,10 @@ defaults:
 layout: cover
 ---
 
-# Smart Contract 개발 기본
+# DApp 개발 기초
 
-Hello, World!
+## 오상문
+## Feb. 2022
 
 ---
 
@@ -26,15 +27,13 @@ Hello, World!
 
 <img src='/collections.png' style='width:400px' class='bg-current border-sm'/>
 
-    
+<div class='container py-4'/>
 
 <img src='/mindmap.svg' style='width:400px' class='bg-current'/>
 
 ---
 
-# DApp
-
-
+# DApp Architecture
 
 
 ---
@@ -69,7 +68,7 @@ Hello, World!
 | Library      |   |[OpenZeppelin Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts) |   |
 | Block Explorer |   | [Etherscan](https://etherscan.io/) | Mainnet |
 |                |   | [Etherscan/Rinkeby](https://rinkeby.etherscan.io/) |
-| Wallet         | <logos-metamask class='text-3xl' /> | [MetaMask](https://metamask.io/) |
+| Wallet         | <logos-metamask  class='text-3xl'/> | [MetaMask](https://metamask.io/) |
 
 </div>
 </div>
@@ -344,19 +343,171 @@ truffle(rinkeby)>
 
 # JSON-RPC and Web3.js
 
+<div class='grid grid-cols-5 gap-x-10'>
+<div class='col-span-4 z-font-xs'>
+
 | JSON-RPC | Description | web3.js |
 | -------- | ----------- | ------- |
-| [<tt>web3_clientVersion</tt>](https://eth.wiki/json-rpc/API#web3_clientversion) |  the current client version | [<tt>web3.eth.getNodeInfo()</tt>](https://web3js.readthedocs.io/en/v1.2.4/web3-eth.html#getnodeinfo) |
 | [<tt>eth_chainId</tt>](https://eips.ethereum.org/EIPS/eip-695) | the chain ID of the current connected node | [<tt>web3.eth.getChainId()</tt>](https://web3js.readthedocs.io/en/v1.2.4/web3-eth.html#getchainid) |
+| [<tt>eth_blockNumber</tt>](https://eth.wiki/json-rpc/API#eth_blocknumber) | the number of most recent block | [<tt>web3.eth.getBlockNumber()</tt>](https://web3js.readthedocs.io/en/v1.2.4/web3-eth.html#getblocknumber) |
+| [<tt>eth_getBlockByNumber</tt>](https://eth.wiki/json-rpc/API#eth_getblockbynumber) | information about a block by block number.  | [<tt>web3.eth.getBlock()</tt>](https://web3js.readthedocs.io/en/v1.2.4/web3-eth.html#getblock) |
+| [<tt>web3_clientVersion</tt>](https://eth.wiki/json-rpc/API#web3_clientversion) |  the current client version | [<tt>web3.eth.getNodeInfo()</tt>](https://web3js.readthedocs.io/en/v1.2.4/web3-eth.html#getnodeinfo) |
+| [<tt>eth_coinbase</tt>](https://eth.wiki/json-rpc/API#eth_coinbase) | the coinbase address to which mining rewards will go | [<tt>web3.eth.getCoinbase()</tt>](https://web3js.readthedocs.io/en/v1.2.4/web3-eth.html#getcoinbase) |
+| [<tt>eth_accounts</tt>](https://eth.wiki/json-rpc/API#eth_accounts) | a list of addresses owned by client | [<tt>web3.eth.getAccounts()</tt>](https://web3js.readthedocs.io/en/v1.2.4/web3-eth.html#getaccounts) |
+| [<tt>eth_getBalance</tt>](https://eth.wiki/json-rpc/API#eth_getbalance) | the balance of the account of given address | [<tt>web3.eth.getBalance()</tt>](https://web3js.readthedocs.io/en/v1.2.4/web3-eth.html#getbalance) |
+| [<tt>eth_getTransactionCount</tt>](https://eth.wiki/json-rpc/API#eth_gettransactioncount) | the number of transactions sent from an address. (nonce) | [<tt>web3.eth.getTransactionCount()</tt>](https://web3js.readthedocs.io/en/v1.2.4/web3-eth.html#gettransactioncount) |
+| [<tt>eth_getCode</tt>](https://eth.wiki/json-rpc/API#eth_getcode) | code at a given address  | [<tt>web3.eth.getCode()</tt>](https://web3js.readthedocs.io/en/v1.2.4/web3-eth.html#getcode) |
+| [<tt>eth_signTransaction</tt>](https://eth.wiki/json-rpc/API#eth_signtransaction) | signs a transaction can be submitted to the network at a later time.| [<tt>web3.eth.signTransaction()</tt>](https://web3js.readthedocs.io/en/v1.2.4/web3-eth.html#signtransaction) |
+| [<tt>eth_sendTransaction</tt>](https://eth.wiki/json-rpc/API#eth_sendtransaction) | creates new message call transaction or a contract creation  | [<tt>web3.eth.sendTransaction()</tt>](https://web3js.readthedocs.io/en/v1.2.4/web3-eth.html#sendtransaction) |
+| [<tt>eth_sendRawTransaction</tt>](https://eth.wiki/json-rpc/API#eth_sendrawtransaction) |  creates new message call transaction or a contract creation for signed transactions.  | [<tt>web3.eth.sendSignedTransaction()</tt>](https://web3js.readthedocs.io/en/v1.2.4/web3-eth.html#sendsignedtransaction) |
+| [<tt>eth_call</tt>](https://eth.wiki/json-rpc/API#eth_call) | executes a new message call immediately without creating a transaction on the block chain.| [<tt>web3.eth.call()</tt>](https://web3js.readthedocs.io/en/v1.2.4/web3-eth.html#call) |
+
+</div>
+<div class='col-span-1'>
+
+* Resources <carbon-document/>
+    * [JSON-RPC API](https://eth.wiki/json-rpc/API#json-rpc-methods)
+    * [Web3.js API](https://web3js.readthedocs.io/en/v1.5.2/web3.html)
+    * [Web3.py API](https://web3py.readthedocs.io/en/latest/web3.main.html)
+
+</div>
+
+</div>
+
+---
+
+# JSON-RPC Samples
+
+<div class='grid grid-cols-5 gap-x-10'>
+<div class='col-span-4'>
+
+```bash
+$ curl -sSX POST --data '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":21}' \
+  https://rinkeby.infura.io/v3/${INFURA_PROJECT_ID} | jq .
+{
+  "jsonrpc": "2.0",
+  "id": 21,
+  "result": "0x4"
+}
+$ curl -sSX POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":22}' \
+  https://rinkeby.infura.io/v3/${INFURA_PROJECT_ID} | jq .
+{
+  "jsonrpc": "2.0",
+  "id": 22,
+  "result": "0x9bced3"
+}
+$ curl -sSX POST --data '{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest", false],"id":23}' \
+  https://rinkeby.infura.io/v3/${INFURA_PROJECT_ID} | jq .
+...
+$ curl -sSX POST --data '{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["0x0", false],"id":24}' \
+  https://rinkeby.infura.io/v3/${INFURA_PROJECT_ID} | jq .
+...
+$ curl -sSX POST --data '{"jsonrpc":"2.0","method":"eth_accounts","params":[],"id":25}' \
+  https://rinkeby.infura.io/v3/${INFURA_PROJECT_ID} | jq .
+{
+  "jsonrpc": "2.0",
+  "id": 25,
+  "result": []
+}
+$
+```
+
+</div>
+<div class='col-span-1'>
+
+* Resources <carbon-document/>
+    * [<tt>jq</tt>](https://stedolan.github.io/jq/) : <tt>sed</tt> for JSON data
+
+</div>
+</div>
 
 ---
 
 # Ganache (Ganache CLI)
+Local standalone client mainly for testing
 
-* Local standalone client
+<div class='grid grid-cols-4 gap-x-10'>
+<div class='col-span-2'>
+
+* Installing
+
+```bash
+$ npm install -g ganache
+...
+$ ganache --help
+
+```
+<div class='container py-4'/>
+
+* Launching
+
+```bash
+$ ganache --chain.networkId 2016 \
+  --chain.chainId 2016 \
+  --server.host 127.0.0.1 \
+  --server.port 8545 \
+  --miner.defaultGasPrice 25000000000 \
+  --miner.defaultTransactionGasLimit 400000000 \
+  --miner.blockTime 0 \
+  --wallet.totalAccounts 15 \
+  --wallet.defaultBalance 10000 \
+  --wallet.unlockedAccounts 0 1 2 3 4 \
+  --database.dbPath run/ganache/data
+  
+  
+```
+
+<div class='container py-4'/>
+
+* Resources <carbon-document/>
+    * [Ganache startup options](https://github.com/trufflesuite/ganache#startup-options)
+
+</div>
+<div class='col-span-2'>
+
+* Playing
+
+```bash
+$ truffle config get networks
+{
+  dashboard: {
+    network_id: '*',
+    networkCheckTimeout: 120000,
+    url: 'http://localhost:24012/rpc',
+    skipDryRun: true
+  },
+  development: {
+    host: '127.0.0.1',
+    port: 8545,
+    network_id: 2016,
+    gas: 300000000,
+    gasPrice: 0,
+    websockets: false
+  },
+  mainnet: { provider: [Function: provider], network_id: '1' },
+  rinkeby: { provider: [Function: provider], network_id: '4' }
+}
+$ truffle console
+truffle(development)>
+
+...
+
+truffle(development)> .exit
+$
+```
+
+</div>
+</div>
 
 ---
 
 # Standards
+
+
+
+---
+
+# Sample Contract
+
 
 

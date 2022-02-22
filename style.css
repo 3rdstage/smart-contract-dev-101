@@ -10,4 +10,21 @@
 
 .z-font-sm table{
   font-size: 1.0rem !important;
+  line-height: 1.2 !important;
 }
+
+.z-font-sm table tr td{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.z-font-xs table{
+  font-size: 0.8rem !important;
+  line-height: 1.2 !important;
+}
+
+.z-font-xs table tr td{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
