@@ -1,7 +1,7 @@
 ---
 # https://sli.dev/custom/#frontmatter-configures
 theme: 'seriph'
-title: ''
+title: 'Smart Contract and DApp 101'
 
 download: true
 highlighter: prism   # shiki
@@ -23,17 +23,9 @@ layout: cover
 
 ---
 
-# Images
-
-<img src='/collections.png' style='width:400px' class='bg-current border-sm'/>
-
-<div class='container py-4'/>
-
-<img src='/mindmap.svg' style='width:400px' class='bg-current'/>
-
----
-
 # DApp Architecture
+
+<img class='h-11/12' src='/ethereum-dapp-architecture-2.png'/>
 
 
 ---
@@ -52,25 +44,21 @@ layout: cover
 
 # DApp 개발 환경/도구
 
-## Smart Contract
-
 <div class='grid grid-cols-5'>
-<div class='col-span-3'>
-<div class='inline-table'>
+<div class='col-span-4'>
 
-| Category |    | Tool/Service | Remarks |
-| -------- | -- |---- | ------- |
-| Editing  |   | [Remix IDE](https://github.com/ethereum/remix-project) | [Web](https://remix.ethereum.org/) based |
-| Build/Deploy | <logos-truffle class='text-3xl' /> | [Truffle](https://github.com/trufflesuite/truffle)| JavaScript based |
+| Category |       | Tool/Service | Remarks |
+| -------- | :---: | ---- | ------- |
+| Editing      | <img class='h-10 w-10 filter invert' src='/remix/remix-icon.webp'/> | [Remix IDE](https://github.com/ethereum/remix-project) | [Web](https://remix.ethereum.org/) based |
+| Build/Deploy | <img class='h-10 w-10' src='/truffle/truffle-icon.png'/> | [Truffle](https://github.com/trufflesuite/truffle)| JavaScript based |
 |              |    | [Browine](https://github.com/eth-brownie/brownie) | Python based |
-| Local Client | <logos-ganache class='text-3xl' /> | [Ganache](https://github.com/trufflesuite/ganache) | Ganache CLI |
+| Local Client | <img class='h-10 w-10' src='/ganache/ganache-favicon.png'/> | [Ganache](https://github.com/trufflesuite/ganache) | Ganache CLI |
 | Mainnet/Testnet Gateway |   | [Infura](https://infura.io/) |   |
-| Library      |   |[OpenZeppelin Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts) |   |
-| Block Explorer |   | [Etherscan](https://etherscan.io/) | Mainnet |
+| Library      | <img class='h-10 w-10' src='/openzeppelin/oz-icon.svg'/> | [OpenZeppelin Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts) |   |
+| Block Explorer | <img class='h-10 w-10' src='/etherscan/logos/etherscan-logo-light-circle.svg'/>  | [Etherscan](https://etherscan.io/) | Mainnet |
 |                |   | [Etherscan/Rinkeby](https://rinkeby.etherscan.io/) |
-| Wallet         | <logos-metamask  class='text-3xl'/> | [MetaMask](https://metamask.io/) |
+| Wallet         | <img class='h-10 w-10' src='/metamask/metamask-icon.svg'/> | [MetaMask](https://metamask.io/) |
 
-</div>
 </div>
 </div>
 
@@ -261,7 +249,7 @@ module.exports = {
 <div class='col-span-3 col-start-1 z-font-sm'>
 
 | Network(Chain) | Chain ID | Consensus | Avg. Block Time | Explorer |
-| -------------- | -------- | --------- | --------------- | -------- |
+| -------------- | :------: | :-------: | --------------: | -------- |
 | Mainnet        | 1        | PoW       | 15 min.         | [Etherscan](https://etherscan.io/) |
 | Ropsten        | 3        | PoW       | 30 sec.         | [Etherscan/Ropsten](https://ropsten.etherscan.io/) |
 | [Rinkeby](https://www.rinkeby.io/) | 4 | PoA | 15 sec.  | [Etherscan/Rinkeby](https://rinkeby.etherscan.io/) |
@@ -501,13 +489,394 @@ $
 
 ---
 
-# Standards
+# Remix IDE
+Best Solidity editor ever.
 
+<div class='grid grid-cols-5 gap-x-10'>
+<div class='col-span-2'>
+
+* Intalling <tt>remixd</tt>
+
+```bash
+
+$ npm install @remix-project/remixd
+...
+
+$ npx remixd --help
+```
+
+<div class='container py-4'/>
+
+* Launching <tt>remixd</tt>
+
+```bash
+
+$ npx remixd --shared-folder ./ \
+  --remix-ide https://remix.ethereum.org
+...
+$
+```
+
+</div>
+<div class='col-span-3'>
+
+* Open <button class='animate-pulse'>https://remix.ethereum.org</button>
+    * Click **<span class='underline'>Connect to Localhost</span>**
+      under the **<span class='underline'>File</span>** section in the main pannel.
+    * In the **<span class='underline'>File Explorers</span>**
+      <img class='inline h-6 filter invert mx-2' src='/remix/file-manager.webp'/> on the left pannel,
+      Click mouse right button on <span class='underline'>***<tt>contracts</tt>***</span> directory,
+      select **<span class='underline'>New Folder</span>** menu to
+      create ***<span class='underline'><tt>cryptopunks</tt></span>*** directory under it.
+    * Click mouse right button on ***<span class='underline'><tt>contracts/cryptopunks</tt></span>*** directory
+      select **<span class='underline'>New Folder</span>** menu
+      to create ***<span class='underline'><tt>CryptoPunksMarket.sol</tt></span>*** file under it.
+    * Copy the source from *<tt class='break-all'>https://github.com/larvalabs/cryptopunks/blob/master/contracts/CryptoPunksMarket.sol</tt>*
+      and paste it into the ***<span class='underline'><tt>contracts/cryptopunks/CryptoPunksMarket.sol</tt></span>*** file.
+    * Change left pannel to **<span class='underline'>Solidity Compiler</span>**
+      by clicking <img class='inline h-6 filter invert mx-4' src='/remix/solidity-compiler.webp'/> in the leftmost bar
+    * In the **<span class='underline'>Solidity Compiler</span>**
+      <img class='inline h-6 filter invert mx-2' src='/remix/solidity-compiler.webp'/> on the left pannel,
+      click **<span class='underline'>Compile CryptoPunksMarket.sol</span>** button to compile the contract source.
+    
+ 
+
+</div>
+</div>
 
 
 ---
 
-# Sample Contract
+# Sample Contract (<span>1/4</span>)
+<span class='text-sm'>https://github.com/larvalabs/cryptopunks/blob/master/contracts/CryptoPunksMarket.sol</span>
+
+<div class='grid' grid='cols-7' gap='x-4'>
+<div col='span-5'>
+
+```solidity
+pragma solidity ^0.4.8;
+contract CryptoPunksMarket {
+
+    // You can use this hash to verify the image file containing all the punks
+    string public imageHash = "ac39af4793119ee46bbff351d8cb6b5f23da60222126add4268e261199a2921b";
+
+    address owner;
+
+    string public standard = 'CryptoPunks';
+    string public name;
+    string public symbol;
+    uint8 public decimals;
+    uint256 public totalSupply;
+
+    uint public nextPunkIndexToAssign = 0;
+
+    bool public allPunksAssigned = false;
+    uint public punksRemainingToAssign = 0;
+
+    //mapping (address => uint) public addressToPunkIndex;
+    mapping (uint => address) public punkIndexToAddress;
+
+    /* This creates an array with all balances */
+    mapping (address => uint256) public balanceOf;
+    
+    ...
+
+```
+</div>
+
+<div col='span-2' text='sm'>
+
+* Resources <carbon-document/>
+    * [Structure of Contract](https://docs.soliditylang.org/en/v0.8.12/structure-of-a-contract.html)
+        * State variables
+        * Events
+        * Functions
+    * [Data types](https://docs.soliditylang.org/en/v0.8.12/types.html)
+        * Boolean
+        * Integer
+        * Address
+        * Fixed-sized byte array
+        * Dynamically-sized byte array
+        * String
+        * Enum
+        * Fixed-sized array
+        * Dynamically-sided array
+        * Mapping
+    * [Visibility](https://docs.soliditylang.org/en/v0.8.12/contracts.html)
+
+</div>
+
+</div>
+
+---
+
+# Sample Contract (<span>2/4</span>)
+<span class='text-sm'>https://github.com/larvalabs/cryptopunks/blob/master/contracts/CryptoPunksMarket.sol</span>
+
+<div class='grid' grid='cols-7' gap='x-4'>
+<div col='span-5'>
+
+```solidity
+    ...
+    
+    struct Offer {
+        bool isForSale;
+        uint punkIndex;
+        address seller;
+        uint minValue;          // in ether
+        address onlySellTo;     // specify to sell only to a specific person
+    }
+
+    struct Bid {
+        bool hasBid;
+        uint punkIndex;
+        address bidder;
+        uint value;
+    }
+
+    // A record of punks that are offered for sale at a specific minimum value, and perhaps to a specific person
+    mapping (uint => Offer) public punksOfferedForSale;
+
+    // A record of the highest punk bid
+    mapping (uint => Bid) public punkBids;
+
+    mapping (address => uint) public pendingWithdrawals;
+        
+    ...
+```
+
+</div>
+<div col='span-2' text='sm'>
+
+* Resources <carbon-document/>
+    * [Structs](https://docs.soliditylang.org/en/v0.8.12/types.html#structs)
+    * [Mapping Types](https://docs.soliditylang.org/en/v0.8.12/types.html#mapping-types)
+</div>
+</div>
+
+---
+
+# Sample Contract (<span>3/4</span>)
+<span class='text-sm'>https://github.com/larvalabs/cryptopunks/blob/master/contracts/CryptoPunksMarket.sol</span>
+
+<div class='grid' grid='cols-7' gap='x-4'>
+<div col='span-5'>
+
+```solidity
+    event Assign(address indexed to, uint256 punkIndex);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event PunkTransfer(address indexed from, address indexed to, uint256 punkIndex);
+    event PunkOffered(uint indexed punkIndex, uint minValue, address indexed toAddress);
+    event PunkBidEntered(uint indexed punkIndex, uint value, address indexed fromAddress);
+    event PunkBidWithdrawn(uint indexed punkIndex, uint value, address indexed fromAddress);
+    event PunkBought(uint indexed punkIndex, uint value, address indexed fromAddress, address indexed toAddress);
+    event PunkNoLongerForSale(uint indexed punkIndex);
+
+    /* Initializes contract with initial supply tokens to the creator of the contract */
+    function CryptoPunksMarket() payable {
+        //        balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
+        owner = msg.sender;
+        totalSupply = 10000;                        // Update total supply
+        punksRemainingToAssign = totalSupply;
+        name = "CRYPTOPUNKS";                                   // Set the name for display purposes
+        symbol = "Ͼ";                               // Set the symbol for display purposes
+        decimals = 0;                                       // Amount of decimals for display purposes
+    }
+    
+    function setInitialOwner(address to, uint punkIndex) {
+        if (msg.sender != owner) throw;
+        if (allPunksAssigned) throw;
+        if (punkIndex >= 10000) throw;
+        ...
+    }
+    
+    ...
+```
+
+</div>
+<div col='span-2' text='sm'>
+
+* Resources <carbon-document/>
+    * [Functions](https://docs.soliditylang.org/en/v0.8.12/contracts.html#functions)
+        * [View Functions](https://docs.soliditylang.org/en/v0.8.12/contracts.html#view-functions)
+        * [Pure Functions](https://docs.soliditylang.org/en/v0.8.12/contracts.html#pure-functions)
+    * [Events](https://docs.soliditylang.org/en/v0.8.12/contracts.html#events)
+</div>
+</div>
+
+---
+
+# Sample Contract (<span>4/4</span>)
+<span class='text-sm'>https://github.com/larvalabs/cryptopunks/blob/master/contracts/CryptoPunksMarket.sol</span>
+
+<div class='grid' grid='cols-4' gap='x-4'>
+<div col='span-2'>
+
+```solidity
+    ...
+
+    function setInitialOwners(address[] addresses, uint[] indices) {
+      ...
+    }
+
+    function allInitialOwnersAssigned() {
+      ...
+    }
+
+    function getPunk(uint punkIndex) {
+      ...
+    }
+
+    function transferPunk(address to, uint punkIndex) {
+      ...
+    }
+
+    function punkNoLongerForSale(uint punkIndex) {
+      ...
+    }
+
+    function offerPunkForSale(uint punkIndex, uint minSalePriceInWei) {
+      ...
+    }
+    
+    
+    ...
+```
+
+</div>
+<div col='span-2'>
+    
+```solidity
+    ...
+    
+    function offerPunkForSaleToAddress(uint punkIndex,
+                uint minSalePriceInWei, address toAddress) {
+      ...
+    }
+
+    function buyPunk(uint punkIndex) payable {
+      ...
+    }
+
+    function withdraw() {
+      ...
+    }
+
+    function enterBidForPunk(uint punkIndex) payable {
+      ...
+    }
+
+    function acceptBidForPunk(uint punkIndex, uint minPrice) {
+      ...
+    }
+
+    function withdrawBidForPunk(uint punkIndex) {
+      ...
+    }
+
+}
+```
+
+</div>
+</div>
+
+---
+
+# Solidity Features
+
+<div class='my-8'/>
+
+<div class='grid' grid='cols-5' gap='x-4'>
+<div col='span-3' leading='loose'>
+
+### <mdi-check-circle-outline text='2xl lime-400' align='middle' m='r-2'/> C, Java, JavaScript like syntax
+<div m='l-12'>
+Curly-brace block
+</div>
+
+<div class='my-8'/>
+
+### <mdi-check-circle-outline text='2xl lime-400' align='middle' m='r-2'/> Statically typed
+<div m='l-12'>
+Compile-time type safety
+</div>
+
+<div class='my-8'/>
+
+### <mdi-check-circle-outline text='2xl lime-400' align='middle' m='r-2'/> Imperative and object-oriented
+<div m='l-12'>
+Support <code>interface</code>, <code>abstract contract</code>, multiple <code>inheritance</code>
+</div>
+
+<div class='my-8'/>
+
+### <mdi-check-circle-outline text='2xl lime-400' align='middle' m='r-2'/> Radicall growing
+<div m='l-12'>
+Breaking change in every major version upgrade from <tt>v0.5.0</tt>(Nov 2018) to <tt>v0.8.0</tt>(Dec 2020)
+</div>
+
+<div class='my-8'/>
+
+### <mdi-check-circle-outline text='2xl lime-400' align='middle' m='r-2'/> Runs on EVM<span text='sm top'>Ethereum Virtual Machine</span>
+<div m='l-12'>
+Compiled into bytecode and executed as a number of EVM opcodes.
+</div>
 
 
+</div>
+<div col='span-2'>
+
+* Resources <carbon-document/>
+    * https://github.com/ethereum/solidity
+    * [Inheritance](https://docs.soliditylang.org/en/v0.8.12/contracts.html#inheritance)
+    * [Interfaces](https://docs.soliditylang.org/en/v0.8.12/contracts.html#interfaces)
+    * [Abstract Contracts](https://docs.soliditylang.org/en/v0.8.12/contracts.html#abstract-contracts)
+    * [EVM](https://ethereum.org/en/developers/docs/evm/)
+    * [EVM Opcodes](https://github.com/wolflo/evm-opcodes)
+    * [Ethereum Yello Paper](https://ethereum.github.io/yellowpaper/paper.pdf)
+
+</div>
+</div>
+
+
+---
+
+# Solidity Types (<span>1/2</span>)
+
+<div text='sm'>
+
+| Type | Keyword | Operators | Fields/Methods | Literal |
+| ---- | ------- | --------- | -------------- | ------- |
+| Boolean | <span font='bold' text='teal-200'>`bool`</span> | <span whitespace='nowrap'>`!`, `&&`, `\|\|`, `==`, `!=`</span> |   |   | `tru`, `false`
+| Unsigned Integer | <span font='bold' text='teal-200'>`uint8`, `uint16`, `uint24`, ..., `uint248`, `uint256`, `uint`</span> | <span whitespace='nowrap'>`<`, `<=`, `==`, `>=`, `>`,<br/>`&`, `\|`, `^`, `~`, `<<`, `>>`,<br/>`+`, `-`, `*`, `/`, `%`, `**`</span> |   | <span text='xs'>`100`, `0x2eff`, `300_000_000`, `2e10`, `2.1e10`</span> |
+| Signed Integer | <span font='bold' text='teal-200'>`int8`, `int16`, `int24`, ..., `int248`, `int256`, `int`</span> | <span whitespace='nowrap'>`<`, `<=`, `==`, `>=`, `>`,<br/>`&`, `\|`, `^`, `~`, `<<`, `>>`,<br/>`+`, `-`, `*`, `/`, `%`, `**`</span> |   |   |
+| Address | <span font='bold' text='teal-200'>`address`</span> |    | `balance`, `code`, `call()`, `delegatecall()`, `staticcall()` | <span text='xs'>`0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF`</span> |
+| Address Payable | <span font='bold' text='teal-200'>`address payable`</span> |    | `balance`, `code`, `call()`, `delegatecall()`, `staticcall()`, `transfer()`, `send()` |   |
+| Fixed-sized Byte Array | <span font='bold' text='teal-200'>`byte1`, `byte2`, `byte3`, ... `byte31`, `byte32`</span> | <span whitespace='nowrap'>`<`, `<=`, `==`, `>=`, `>`,<br/>`&`, `\|`, `^`, `~`, `<<`, `>>`,<br/>`x[k]`</span> | `length` |   |
+ 
+</div>
+
+---
+
+# Solidity Types (<span>2/2</span>)
+
+<div class='text-sm'>
+
+| Type | Keyword | Operators | Fields/Methods | Literal |
+| ---- | ------- | --------- | -------------- | ------- |
+| (Dynamically-sized) Byte Array | <span font='bold' text='teal-200'>`bytes`</span> | <code>*x*[*k*]</code>  | `push()`, <code>push(*x*)</code>, `pop()`, <code>bytes(*string*)</code>, `concat()` |   |
+| String | <span font='bold' text='teal-200'>`string`</span> |    | `concat()`  | <span class='text-xs'>`'foo'`, `"foo"`, `'foo\nbar'`, `'foo\\bar'`</span> |
+| Array | <span font='bold' text='teal-200'><code>*T*[*n*]</code>, <code>*T*[]</code>, <code>*T*[*n*][*m*]</code>, <code>*T*[*n*][]</code>, <code>*T*[][*m*]</code>, <code>*T*[][]</code></span> | <code>*a*[*k*]</code>, <code>*a*[*m*:*n*]</code> | `length`, `push()`, <code>push(*x*)</code>, `pop()` | <span text='xs'>[1, 2, 3]</span>  |
+| Mapping | <span font='bold' text='teal-200'><code>mapping(*key-type* => *value-type*)</code></span> | <code>*m*[*key*]</code> |
+| Struct | <span font='bold' text='teal-200'><code>struct *T* { ... }</code></span> |   |   |   |
+
+</div>
+
+---
+
+# Deployment and ...
+
+
+
+---
 
