@@ -25,8 +25,8 @@ layout: cover
 
 # DApp Architecture
 
-<div class='align-top h-5/6 fill-red-500 stroke-yellow-500'>
-<img class='align-top fill-red-500 stroke-yellow-500' src='/ethereum-dapp-architecture.svg'/>
+<div class='place-content-start align-top alogin-text-top border-1 border-gray-500/50 rounded-md p-4'>
+<img class='filter invert brightness-50 align-top alogin-text-top h-132' src='/ethereum-dapp-architecture.svg' height='600px'/>
 </div>
 
 ---
