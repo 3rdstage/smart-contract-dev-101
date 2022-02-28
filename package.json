@@ -22,7 +22,7 @@
     "!/examples"
   ],
   "dependencies": {
-    "@slidev/cli": "~0.28.5",
+    "@slidev/cli": "^0.28.9",
     "@slidev/theme-default": "~0.21.1",
     "@slidev/theme-seriph": "^0.21.1"
   },
