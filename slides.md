@@ -67,7 +67,7 @@ layout: cover
 
 # Truffle
 
-* Installing Node.js
+* Checking Node.js
     ```bash
     $ node --version
     ```
