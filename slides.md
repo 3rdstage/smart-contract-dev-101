@@ -10,9 +10,6 @@ aspectRatio: '16/9'
 canvasWidth: 1200
 defaults:
   layout: 'default'
----
-
----
 layout: cover
 ---
 
@@ -876,8 +873,4 @@ Compiled into bytecode and executed as a number of EVM opcodes.
 ---
 
 # Deployment and ...
-
-
-
----
 
